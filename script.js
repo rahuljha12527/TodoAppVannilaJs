@@ -6,6 +6,8 @@ let incompleteTasksHolder = document.getElementById("incomplete-tasks");
 
 let completeTasksHolder = document.getElementById("completed-tasks");
 
+
+// create a new task
 let createNewTaskElement = function (taskString) {
   let listItem = document.createElement("li");
   let checkBox = document.createElement("input");
@@ -77,6 +79,7 @@ let taskCompleted = function () {
 
     console.log("Task completed");
   let listItem = this.parentNode;
+  console.log("task complete",listItem);
   completeTasksHolder.appendChild(listItem);
   bindTasksEvents(listItem, taskIncomplete);
 
@@ -84,6 +87,7 @@ let taskCompleted = function () {
 
 
 let taskIncomplete=function(){
+
 
     let listItem=this.parentNode;
     incompleteTasksHolder.appendChild(listItem);
@@ -110,12 +114,13 @@ let bindTasksEvents=function(taskListItem,checkBoxEventHandler){
 }
 
 
-
+//cycle over incompleteTaskHolder ul list items
 for(let i=0;i<incompleteTasksHolder.children.length;i++){
+    
     bindTasksEvents(incompleteTasksHolder.children[i],taskCompleted);
 }
 
-
+//cycle over completedTaskHolder ul list items
 for(let i=0;i<completeTasksHolder.children.length;i++){
     bindTasksEvents(completeTasksHolder.children[i],taskIncomplete);
 }

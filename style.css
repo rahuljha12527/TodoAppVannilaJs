@@ -1,6 +1,6 @@
 /* Basic Style */
 body {
-    background: #fff;
+  background: linear-gradient(#e66465, #9198e5);
     color: #333;
     font-family: Lato, sans-serif;
   }
@@ -117,4 +117,9 @@ body {
   
   ul li.editMode label {
     display:none;
+  }
+
+  .color-button{
+    color: black;
+    
   }
